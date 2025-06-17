@@ -1,8 +1,10 @@
 from google import genai
-
+from dotenv import load_dotenv
+import os 
+load_dotenv()
 
 # use ai to extract the title and author
-GEMINI_API_KEY = "AIzaSyDjFS5cdz_yJ1un_8ekUdEUHYiqNncr-F0"
+GEMINI_API_KEY = os.getenv("GEM_API_KEY")
 client = genai.Client(api_key=GEMINI_API_KEY)
 text="""
 Producer Kurt Kohlstedt spoke with Norman Brosterman, author of Inventing Kindergarten; Tamar Zinguer, author of Architecture in Play: Intimations of Modernism in Architectural Toys; and Alexandra Lange, author of The Design of Childhood: How the Material World Shapes Independent Kids.
